@@ -1,7 +1,7 @@
 const userInitialState = {
 	engine: 'V6',
-	caroseryLacquer: 'Red',
-	rimLacquer: 'Red',
+	caroseryLacquer: 'Black',
+	rimLacquer: 'Black',
 	rimSize: '18"',
 	seats: 'Alcantara',
 	upholsteryColor: 'Black',

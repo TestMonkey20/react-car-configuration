@@ -1,44 +1,16 @@
 import ConfigSelect from './ConfigSelect'
 import ConfigCheckbox from './ConfigCheckbox'
 import { useSelector, useDispatch } from 'react-redux'
+import { engines, caroseryLacquer, rimLacquer, rimSize, seats, upholsteryColor  } from './SetupOptions'
+
+
 function ConfigForm() {
 
 	const config = useSelector(store => store.configuration)
 	const dispatch = useDispatch()
 
-	const engines = [
-		'V6',
-		'V8',
-		'Vankel',
-	]
-	const caroseryLacquer = [
-		'Red',
-		'Green',
-		'Blue',
-	]
-	const rimLacquer = [
-		'Red',
-		'Green',
-		'Blue',
-	]
-	const rimSize = [
-		'18"',
-		'20"',
-		'22"',
-	]
-	const seats = [
-		'Alcantra',
-		'Leather',
-		'Nylon',
-	]
-	const upholsteryColor = [
-		'Black',
-		'White',
-		'Cream',
-	]
-
 	return <div>
-
+		
 		<ConfigSelect 
 			label='Engine:'
 			options={engines}
@@ -59,7 +31,7 @@ function ConfigForm() {
 			value={config.rimLacquer}
 			onChange={value => dispatch({ type: 'CHANGE_RIM_LACQUER', payload: value })}
 		/>
-
+		
 		<ConfigSelect 
 			label='Rim size:'
 			options={rimSize}
@@ -85,18 +57,21 @@ function ConfigForm() {
 			label='Dynamic led reflectors:'
 			checked={config.dynamicLED}
 			onChange={value => dispatch({ type: 'CHANGE_DYNAMIC_LED', payload: value })}
+			cost={13000}
 		/>
 
 		<ConfigCheckbox 
 			label='Premium sound system:'
 			checked={config.premiumSound}
 			onChange={value => dispatch({ type: 'CHANGE_PREMIUM_SOUND', payload: value })}
+			cost={14000}
 		/>
 
 		<ConfigCheckbox  
 			label='Sport suspension:'
 			checked={config.sportSuspension}
 			onChange={value => dispatch({ type: 'CHANGE_SPORT_SUSPENSION', payload: value })}
+			cost={15000}
 		/>
 	</div>
 	
