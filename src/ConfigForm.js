@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import ConfigSelect from './ConfigSelect'
+import ConfigCheckbox from './ConfigCheckbox'
 import { useSelector, useDispatch } from 'react-redux'
-
 function ConfigForm() {
 
 	const config = useSelector(store => store.configuration)
@@ -23,9 +22,9 @@ function ConfigForm() {
 		'Blue',
 	]
 	const rimSize = [
-		'18\'',
-		'20\'',
-		'22\'',
+		'18"',
+		'20"',
+		'22"',
 	]
 	const seats = [
 		'Alcantra',
@@ -37,46 +36,69 @@ function ConfigForm() {
 		'White',
 		'Cream',
 	]
-	
+
 	return <div>
+
 		<ConfigSelect 
-			label='engine'
+			label='Engine:'
 			options={engines}
 			value={config.engine}
 			onChange={value => dispatch({ type: 'CHANGE_ENGINE', payload: value })}
 		/>	
+
 		<ConfigSelect 
-			label='caroseryLacquer'
+			label='Carosery lacquer:'
 			options={caroseryLacquer}
 			value={config.caroseryLacquer}
 			onChange={value => dispatch({ type: 'CHANGE_CAROSERY_LACQUER', payload: value })}
 		/>
+
 		<ConfigSelect 
-			label='rimLacquer'
+			label='Rim lacquer:'
 			options={rimLacquer}
 			value={config.rimLacquer}
 			onChange={value => dispatch({ type: 'CHANGE_RIM_LACQUER', payload: value })}
 		/>
+
 		<ConfigSelect 
-			label='rimSize'
+			label='Rim size:'
 			options={rimSize}
 			value={config.rimSize}
 			onChange={value => dispatch({ type: 'CHANGE_RIM_SIZE', payload: value })}
 		/>
+
 		<ConfigSelect 
-			label='seats'
+			label='Seats'
 			options={seats}
 			value={config.seats}
 			onChange={value => dispatch({ type: 'CHANGE_SEATS', payload: value })}
 		/>
+
 		<ConfigSelect 
-			label='upholsteryColor'
+			label='Upholstery color:'
 			options={upholsteryColor}
 			value={config.upholsteryColor}
 			onChange={value => dispatch({ type: 'CHANGE_UPHOLSTERY_COLOR', payload: value })}
 		/>
+
+		<ConfigCheckbox 
+			label='Dynamic led reflectors:'
+			checked={config.dynamicLED}
+			onChange={value => dispatch({ type: 'CHANGE_DYNAMIC_LED', payload: value })}
+		/>
+
+		<ConfigCheckbox 
+			label='Premium sound system:'
+			checked={config.premiumSound}
+			onChange={value => dispatch({ type: 'CHANGE_PREMIUM_SOUND', payload: value })}
+		/>
+
+		<ConfigCheckbox  
+			label='Sport suspension:'
+			checked={config.sportSuspension}
+			onChange={value => dispatch({ type: 'CHANGE_SPORT_SUSPENSION', payload: value })}
+		/>
 	</div>
-	
 	
 }
 
