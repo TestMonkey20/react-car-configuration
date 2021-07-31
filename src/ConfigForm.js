@@ -3,7 +3,6 @@ import ConfigCheckbox from './ConfigCheckbox'
 import { useSelector, useDispatch } from 'react-redux'
 import { engines, caroseryLacquer, rimLacquer, rimSize, seats, upholsteryColor  } from './SetupOptions'
 
-
 function ConfigForm() {
 
 	const config = useSelector(store => store.configuration)
@@ -54,21 +53,21 @@ function ConfigForm() {
 		/>
 
 		<ConfigCheckbox 
-			label='Dynamic led reflectors:'
+			label='Dynamic led reflectors'
 			checked={config.dynamicLED}
 			onChange={value => dispatch({ type: 'CHANGE_DYNAMIC_LED', payload: value })}
 			cost={13000}
 		/>
 
 		<ConfigCheckbox 
-			label='Premium sound system:'
+			label='Premium sound system'
 			checked={config.premiumSound}
 			onChange={value => dispatch({ type: 'CHANGE_PREMIUM_SOUND', payload: value })}
 			cost={14000}
 		/>
 
 		<ConfigCheckbox  
-			label='Sport suspension:'
+			label='Sport suspension'
 			checked={config.sportSuspension}
 			onChange={value => dispatch({ type: 'CHANGE_SPORT_SUSPENSION', payload: value })}
 			cost={15000}
