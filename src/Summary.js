@@ -7,12 +7,12 @@ import Col from 'react-bootstrap/Col';
 function Summary() {
 
 	const config = useSelector(store => store.configuration)
-	const engineCost = engines.find(e => e.name == config.engine).cost
-	const carroseryLacquerCost = caroseryLacquer.find(e => e.name == config.caroseryLacquer).cost
-	const rimLacquerCost = rimLacquer.find(e => e.name == config.rimLacquer).cost
-	const rimSizeCost = rimSize.find(e => e.name == config.rimSize).cost
-	const seatsCost = seats.find(e => e.name == config.seats).cost
-	const upholsteryColorCost = upholsteryColor.find(e => e.name == config.upholsteryColor).cost
+	const engineCost = engines.find(e => e.name === config.engine).cost
+	const carroseryLacquerCost = caroseryLacquer.find(e => e.name === config.caroseryLacquer).cost
+	const rimLacquerCost = rimLacquer.find(e => e.name === config.rimLacquer).cost
+	const rimSizeCost = rimSize.find(e => e.name === config.rimSize).cost
+	const seatsCost = seats.find(e => e.name === config.seats).cost
+	const upholsteryColorCost = upholsteryColor.find(e => e.name === config.upholsteryColor).cost
 
 	return (<div>
 		<Container>
